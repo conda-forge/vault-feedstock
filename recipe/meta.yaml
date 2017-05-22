@@ -1,4 +1,4 @@
-{% set version = "0.7.0" %}
+{% set version = "0.7.1" %}
 
 package:
   name: vault
@@ -11,11 +11,11 @@ source:
   url: https://releases.hashicorp.com/vault/{{ version }}/vault_{{ version }}_windows_amd64.zip  # [win64]
   url: https://releases.hashicorp.com/vault/{{ version }}/vault_{{ version }}_windows_386.zip  # [win32]
   fn: vault-{{ version }}.zip
-  sha256: db995adf0e46dd7ae43d2fa3523f44a007a6adc37c3a47de5c667a1361cffc13  # [osx]
-  sha256: b4bcf45ca5fa006a4d7f8e226e0483201c71ee2b7fb01c73db116a4fe6c29c9f  # [linux32]
-  sha256: c6d97220e75335f75bd6f603bb23f1f16fe8e2a9d850ba59599b1a0e4d067aaa  # [linux64]
-  sha256: 50541390d4de9e8906ad60eab2f527ec18660a5e91c3845f7d15e83416706730  # [win32]
-  sha256: c4d4556665709e0e5b11000413f046e23b365eb97eed9ee04f1a5c2598649356  # [win64]
+  sha256: 9060e4e64b76b566b8ea4f5c76df605292c2aa184b6ec6c1e1fa1afe343e371d  # [osx]
+  sha256: 761783a5a66dddbc74fd87606760379ad992cc4649611ec4ec4fb51c865676eb  # [linux32]
+  sha256: a576fe2c717ea4b5968477757196ff5308dbded4f5083c91d9e2ea824d2d6fdc  # [linux64]
+  sha256: efdd4c064af9fe7ec5508ef07075a3c68192cd6a9ed3c68b201bbf9d5cd02112  # [win32]
+  sha256: 27f6f476650d61b1435bd8f24eca97ecabcb789e1e8a0f8388d59ac4f90517ad  # [win64]
 
 build:
   number: 0
@@ -38,3 +38,4 @@ about:
 extra:
   recipe-maintainers:
     - johanneskoester
+    - sodre
