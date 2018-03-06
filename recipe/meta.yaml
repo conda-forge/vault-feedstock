@@ -1,5 +1,5 @@
 {% set name = "vault" %}
-{% set version = "0.9.4" %}
+{% set version = "0.9.5" %}
 {% set sha256_osx = load_file_regex(load_file=name + "_" + version + "_SHA256SUMS",
                                     regex_pattern="(?m)^(?P<sha256>[0-9a-f]+)\\s+"+ name + "_" + version + "_darwin_amd64.zip$",
                                     from_recipe_dir=True)["sha256"] %}
