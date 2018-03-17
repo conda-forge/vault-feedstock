@@ -1,25 +1,9 @@
 {% set name = "vault" %}
 {% set version = "0.9.4" %}
-{% set sha256_osx = load_file_regex(
-    load_file=name + "_" + version + "_SHA256SUMS",
-    regex_pattern="(?m)^(?P<sha256>[0-9a-f]+)\\s+"+ name + "_" + version + "_darwin_amd64.zip$",
-    from_recipe_dir=True).groupdict()["sha256"] %}
-{% set sha256_linux32 = load_file_regex(
-    load_file=name + "_" + version + "_SHA256SUMS",
-    regex_pattern="(?m)^(?P<sha256>[0-9a-f]+)\\s+"+ name + "_" + version + "_linux_386.zip$",
-    from_recipe_dir=True).groupdict()["sha256"] %}
-{% set sha256_linux64 = load_file_regex(
-    load_file=name + "_" + version + "_SHA256SUMS",
-    regex_pattern="(?m)^(?P<sha256>[0-9a-f]+)\\s+"+ name + "_" + version + "_linux_amd64.zip$",
-    from_recipe_dir=True).groupdict()["sha256"] %}
-{% set sha256_win32 = load_file_regex(
-    load_file=name + "_" + version + "_SHA256SUMS",
-    regex_pattern="(?m)^(?P<sha256>[0-9a-f]+)\\s+"+ name + "_" + version + "_windows_386.zip$",
-    from_recipe_dir=True).groupdict()["sha256"] %}
-{% set sha256_win64 = load_file_regex(
-    load_file=name + "_" + version + "_SHA256SUMS",
-    regex_pattern="(?m)^(?P<sha256>[0-9a-f]+)\\s+"+ name + "_" + version + "_windows_amd64.zip$",
-    from_recipe_dir=True).groupdict()["sha256"] %}
+
+{% set sha256 = "ae5df388a884eacb6f017a8bcfcdc0ad32f2a8634b32f33cc2bb813f81781454" %}
+{% set sha256_win32 = "0f175e7c90de03cb022a82116c9bb60d542cac4d8bfb0e30c9b0eeccc2343083" %}
+{% set sha256_win64 = "4d0b517907f708eae43b85f96ea5a6c92842a7350aaa20a88600d9e2589a1afb" %}
 
 
 package:
@@ -27,24 +11,29 @@ package:
   version: {{ version }}
 
 source:
-  url: https://releases.hashicorp.com/vault/{{ version }}/vault_{{ version }}_darwin_amd64.zip  # [osx]
-  url: https://releases.hashicorp.com/vault/{{ version }}/vault_{{ version }}_linux_386.zip  # [linux32]
-  url: https://releases.hashicorp.com/vault/{{ version }}/vault_{{ version }}_linux_amd64.zip  # [linux64]
-  url: https://releases.hashicorp.com/vault/{{ version }}/vault_{{ version }}_windows_386.zip  # [win32]
-  url: https://releases.hashicorp.com/vault/{{ version }}/vault_{{ version }}_windows_amd64.zip  # [win64]
-  fn: vault-{{ version }}.zip
-  sha256: {{ sha256_osx }}  # [osx]
-  sha256: {{ sha256_linux32 }}  # [linux32]
-  sha256: {{ sha256_linux64 }}  # [linux64]
+  url: https://github.com/hashicorp/{{ name }}/archive/v{{ version }}.tar.gz  # [not win]
+  fn: {{ name }}-{{ version }}.tar.gz  # [not win]
+  sha256: {{ sha256 }}  # [not win]
+
+  url: https://releases.hashicorp.com/{{ name }}/{{ version }}/{{ name }}_{{ version }}_windows_386.zip  # [win32]
+  url: https://releases.hashicorp.com/{{ name }}/{{ version }}/{{ name }}_{{ version }}_windows_amd64.zip  # [win64]
+  fn: {{ name }}-{{ version }}.zip  # [win]
   sha256: {{ sha256_win32 }}  # [win32]
   sha256: {{ sha256_win64 }}  # [win64]
 
 build:
   number: 0
 
+requirements:
+  build:
+    - go 1.10.*  # [not win]
+    - git  # [not win]
+    - make  # [not win]
+    - toolchain  # [not win]
+
 test:
   commands:
-    - vault -v
+    - {{ name|lower }} -v
 
 about:
   home: https://www.vaultproject.io
