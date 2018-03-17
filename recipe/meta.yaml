@@ -1,28 +1,39 @@
-{% set version = "0.9.3" %}
+{% set name = "vault" %}
+{% set version = "0.9.4" %}
+
+{% set sha256 = "ae5df388a884eacb6f017a8bcfcdc0ad32f2a8634b32f33cc2bb813f81781454" %}
+{% set sha256_win32 = "0f175e7c90de03cb022a82116c9bb60d542cac4d8bfb0e30c9b0eeccc2343083" %}
+{% set sha256_win64 = "4d0b517907f708eae43b85f96ea5a6c92842a7350aaa20a88600d9e2589a1afb" %}
+
 
 package:
-  name: vault
+  name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: https://releases.hashicorp.com/vault/{{ version }}/vault_{{ version }}_linux_amd64.zip  # [linux64]
-  url: https://releases.hashicorp.com/vault/{{ version }}/vault_{{ version }}_linux_386.zip  # [linux32]
-  url: https://releases.hashicorp.com/vault/{{ version }}/vault_{{ version }}_darwin_amd64.zip  # [osx]
-  url: https://releases.hashicorp.com/vault/{{ version }}/vault_{{ version }}_windows_amd64.zip  # [win64]
-  url: https://releases.hashicorp.com/vault/{{ version }}/vault_{{ version }}_windows_386.zip  # [win32]
-  fn: vault-{{ version }}.zip
-  sha256: 9474cd8eb9207fea3de56ff86068fc4eb8d20ec7adf31cffb8b265633e659581  # [osx]
-  sha256: d37834916716c9d71fba9c703fd2b69f3de037175a789c85c412ecb0810d10ac  # [linux32]
-  sha256: 4ba8b9dafb903d20b4c87e8954015a07a6995f53a9650ac02b39e6cae502645e  # [linux64]
-  sha256: 2241cc1cc711d056c8774e081965dec7a0c3524f32a622802e68c32726349915  # [win32]
-  sha256: 3a394704640239b4b8980c88822b2513fd7e9fa385f2eb7beb2bea990b9c0f04  # [win64]
+  url: https://github.com/hashicorp/{{ name }}/archive/v{{ version }}.tar.gz  # [not win]
+  fn: {{ name }}-{{ version }}.tar.gz  # [not win]
+  sha256: {{ sha256 }}  # [not win]
+
+  url: https://releases.hashicorp.com/{{ name }}/{{ version }}/{{ name }}_{{ version }}_windows_386.zip  # [win32]
+  url: https://releases.hashicorp.com/{{ name }}/{{ version }}/{{ name }}_{{ version }}_windows_amd64.zip  # [win64]
+  fn: {{ name }}-{{ version }}.zip  # [win]
+  sha256: {{ sha256_win32 }}  # [win32]
+  sha256: {{ sha256_win64 }}  # [win64]
 
 build:
   number: 0
 
+requirements:
+  build:
+    - go 1.10.*  # [not win]
+    - git  # [not win]
+    - make  # [not win]
+    - toolchain  # [not win]
+
 test:
   commands:
-    - vault -v
+    - {{ name|lower }} -v
 
 about:
   home: https://www.vaultproject.io
