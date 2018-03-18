@@ -1,7 +1,7 @@
 {% set name = "vault" %}
-{% set version = "0.9.4" %}
+{% set version = "0.9.5" %}
 
-{% set sha256 = "ae5df388a884eacb6f017a8bcfcdc0ad32f2a8634b32f33cc2bb813f81781454" %}
+{% set sha256 = "2ceaa347257e21e4020293ce68e2026f00655ef7c381f84dda1a487009c8d90f" %}
 {% set sha256_win32 = "0f175e7c90de03cb022a82116c9bb60d542cac4d8bfb0e30c9b0eeccc2343083" %}
 {% set sha256_win64 = "4d0b517907f708eae43b85f96ea5a6c92842a7350aaa20a88600d9e2589a1afb" %}
 
