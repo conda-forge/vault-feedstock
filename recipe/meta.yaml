@@ -2,8 +2,8 @@
 {% set version = "0.9.6" %}
 
 {% set sha256 = "ad89647e7d87a50a168cfca2bc8639636fe48aa85294abfd47ad288ce4cab968" %}
-{% set sha256_win32 = "0f175e7c90de03cb022a82116c9bb60d542cac4d8bfb0e30c9b0eeccc2343083" %}
-{% set sha256_win64 = "4d0b517907f708eae43b85f96ea5a6c92842a7350aaa20a88600d9e2589a1afb" %}
+{% set sha256_win32 = "2d1646a3f65d318f0f019ede1d78fe2af705b603802d5a4f755f4eb6e7228acd" %}
+{% set sha256_win64 = "5759a3355729648059584a0abc13bcac0a8d21c1c23db959c0795af1258734a4" %}
 
 
 package:
