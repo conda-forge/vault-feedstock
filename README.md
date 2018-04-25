@@ -18,14 +18,16 @@ tight access control and recording a detailed audit log.
 Current build status
 ====================
 
-Linux: [![Circle CI](https://circleci.com/gh/conda-forge/vault-feedstock.svg?style=shield)](https://circleci.com/gh/conda-forge/vault-feedstock)
-OSX: [![TravisCI](https://travis-ci.org/conda-forge/vault-feedstock.svg?branch=master)](https://travis-ci.org/conda-forge/vault-feedstock)
-Windows: [![AppVeyor](https://ci.appveyor.com/api/projects/status/github/conda-forge/vault-feedstock?svg=True)](https://ci.appveyor.com/project/conda-forge/vault-feedstock/branch/master)
+[![Linux](https://img.shields.io/circleci/project/github/conda-forge/vault-feedstock/master.svg?label=Linux)](https://circleci.com/gh/conda-forge/vault-feedstock)
+[![OSX](https://img.shields.io/travis/conda-forge/vault-feedstock/master.svg?label=macOS)](https://travis-ci.org/conda-forge/vault-feedstock)
+[![Windows](https://img.shields.io/appveyor/ci/conda-forge/vault-feedstock/master.svg?label=Windows)](https://ci.appveyor.com/project/conda-forge/vault-feedstock/branch/master)
 
 Current release info
 ====================
-Version: [![Anaconda-Server Badge](https://anaconda.org/conda-forge/vault/badges/version.svg)](https://anaconda.org/conda-forge/vault)
-Downloads: [![Anaconda-Server Badge](https://anaconda.org/conda-forge/vault/badges/downloads.svg)](https://anaconda.org/conda-forge/vault)
+
+| Name | Downloads | Version | Platforms |
+| --- | --- | --- | --- |
+| [![Conda Recipe](https://img.shields.io/badge/recipe-vault-green.svg)](https://anaconda.org/conda-forge/vault) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/vault.svg)](https://anaconda.org/conda-forge/vault) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/vault.svg)](https://anaconda.org/conda-forge/vault) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/vault.svg)](https://anaconda.org/conda-forge/vault) |
 
 Installing vault
 ================
