@@ -2,7 +2,7 @@
 {% set version = "0.10.2" %}
 
 {% set sha256 = "10b33b3a464966049caf20d9957e2fc216fe80dd19b2808cefd7dbe76ab4603e" %}
-{% set sha256_win64 = "081ba43ea4ae6b452f66f1471a49f9d3790957357a577113f7369d95fa2303a9" %}
+{% set sha256_win64 = "54ab85e4ed6066883bf64c27713082f1b123d90a958581aeef9cc06acacd6b43" %}
 
 
 package:
