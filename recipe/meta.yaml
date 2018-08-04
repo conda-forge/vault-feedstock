@@ -15,14 +15,15 @@ source:
   sha256: 55b38c5010726c310e01fc797a62e7c466aa2f439c4d27ff3cf872b0298baeda  # [win64]
 
 build:
-  number: 0
+  number: 1
 
 requirements:
   build:
+    - make  # [not win]
+    - {{ compiler('c') }}
+  host:
     - go 1.10.*  # [not win]
     - git  # [not win]
-    - make  # [not win]
-    - toolchain  # [not win]
 
 test:
   commands:
