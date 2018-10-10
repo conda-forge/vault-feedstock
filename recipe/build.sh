@@ -9,8 +9,8 @@ git init
 git config --local user.email "conda@conda-forge.github.io"
 git config --local user.name "conda-forge"
 
-echo $PKG_VERSION >> VERSION
-git add VERSION
+echo $PKG_VERSION >> .conda_version
+git add .conda_version
 git commit -m "conda build of $PKG_NAME-v$PKG_VERSION"
 git tag v${PKG_VERSION}
 
