@@ -6,12 +6,12 @@ package:
   version: {{ version }}
 
 source:
-  - url: https://github.com/hashicorp/{{ name }}/archive/v{{ version }}.tar.gz  # [not win]
+  - folder: src/github.com/hashicorp/{{ name }}  # [not win]
+    url: https://github.com/hashicorp/{{ name }}/archive/v{{ version }}.tar.gz  # [not win]
     fn: {{ name }}-{{ version }}.tar.gz  # [not win]
     sha256: d26da3b145036ce78083adc61f57fc02d0aae85de554ffcf8789e7861953ddaf  # [not win]
-    folder: src/github.com/hashicorp/vault
 
-  - url: https://releases.hashicorp.com/{{ name }}/{{ version }}/{{ name }}_{{ version }}_windows_amd64.zip  # [win64]
+    url: https://releases.hashicorp.com/{{ name }}/{{ version }}/{{ name }}_{{ version }}_windows_amd64.zip  # [win64]
     fn: {{ name }}-{{ version }}.zip  # [win]
     sha256: 9628ea3208be00f162ac1329da1a2a7dbdb4a5e57bece5c5379d872c04df8533  # [win64]
 
