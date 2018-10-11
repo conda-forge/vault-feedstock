@@ -1,28 +1,28 @@
 {% set name = "vault" %}
-{% set version = "0.11.2" %}
+{% set version = "0.11.3" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: https://github.com/hashicorp/{{ name }}/archive/v{{ version }}.tar.gz  # [not win]
-  fn: {{ name }}-{{ version }}.tar.gz  # [not win]
-  sha256: d36b611617004d7a07b8861740e6941b8b94589adc906fbad77b9e13cdd4cf2a  # [not win]
+  - folder: src/github.com/hashicorp/{{ name }}  # [not win]
+    url: https://github.com/hashicorp/{{ name }}/archive/v{{ version }}.tar.gz  # [not win]
+    fn: {{ name }}-{{ version }}.tar.gz  # [not win]
+    sha256: d26da3b145036ce78083adc61f57fc02d0aae85de554ffcf8789e7861953ddaf  # [not win]
 
-  url: https://releases.hashicorp.com/{{ name }}/{{ version }}/{{ name }}_{{ version }}_windows_amd64.zip  # [win64]
-  fn: {{ name }}-{{ version }}.zip  # [win]
-  sha256: f30b2d8d41c1674cbf01f62a1314e94d4de85e4977a6e0fefeaf8ddcb38b4415  # [win64]
+    url: https://releases.hashicorp.com/{{ name }}/{{ version }}/{{ name }}_{{ version }}_windows_amd64.zip  # [win64]
+    fn: {{ name }}-{{ version }}.zip  # [win]
+    sha256: 9628ea3208be00f162ac1329da1a2a7dbdb4a5e57bece5c5379d872c04df8533  # [win64]
 
 build:
   number: 0
 
 requirements:
   build:
-    - go 1.10.*  # [not win]
+    - {{ compiler('go') }}  # [not win]
     - git  # [not win]
     - make  # [not win]
-    - toolchain  # [not win]
 
 test:
   commands:
