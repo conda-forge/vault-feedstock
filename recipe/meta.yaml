@@ -1,5 +1,5 @@
 {% set name = "vault" %}
-{% set version = "0.11.4" %}
+{% set version = "0.11.5" %}
 
 package:
   name: {{ name|lower }}
@@ -9,11 +9,11 @@ source:
   - folder: src/github.com/hashicorp/{{ name }}  # [not win]
     url: https://github.com/hashicorp/{{ name }}/archive/v{{ version }}.tar.gz  # [not win]
     fn: {{ name }}-{{ version }}.tar.gz  # [not win]
-    sha256: b8045403cdffd40c86d4de45a340d004e15acb56f537deecf365a82fe69892c0  # [not win]
+    sha256: 7f5e6f87c1f9505f814d45cdaa2ef2cc6a49129fa51f71498875d47b0a4a2ef2  # [not win]
 
     url: https://releases.hashicorp.com/{{ name }}/{{ version }}/{{ name }}_{{ version }}_windows_amd64.zip  # [win64]
     fn: {{ name }}-{{ version }}.zip  # [win]
-    sha256: 53f00cfa6e4edc1043e2a206e45c1de5754c6fe7fc8e251da63af7de7a3eeaad  # [win64]
+    sha256: aa38b5a393858c9f72596881a0cd223715659e69a6ea4f5394fcc7c8e7fe3e78  # [win64]
 
 build:
   number: 1000
