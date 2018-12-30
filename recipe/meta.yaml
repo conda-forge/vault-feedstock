@@ -24,7 +24,7 @@ build:
 
 requirements:
   build:
-    - {{ compiler('go-nocgo') }}
+    - {{ compiler('go') }}
 
 test:
   commands:
