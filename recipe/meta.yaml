@@ -1,28 +1,27 @@
-{% set name = "vault" %}
-{% set version = "1.0.0" %}
+{% set import_path = "github.com/hashicorp/vault" %}
+{% set version = "1.0.1" %}
+
+{% set name = import_path.split('/')[-1] %}
+{% set pkg_src = 'src' + os.sep+ import_path.replace("/",os.sep) %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  - folder: src/github.com/hashicorp/{{ name }}  # [not win]
-    url: https://github.com/hashicorp/{{ name }}/archive/v{{ version }}.tar.gz  # [not win]
-    fn: {{ name }}-{{ version }}.tar.gz  # [not win]
-    sha256: 5f7edef332b622d6b9897bf252e27251178e7f0f4745cfb27e2179e72d5a769b  # [not win]
-
-    url: https://releases.hashicorp.com/{{ name }}/{{ version }}/{{ name }}_{{ version }}_windows_amd64.zip  # [win64]
-    fn: {{ name }}-{{ version }}.zip  # [win]
-    sha256: 40625092265076ff20925a29fde13e9bd64a5dfca9abfe7d73a59b5f8f2d24b9  # [win64]
+  - folder: {{ pkg_src }}
+    git_url: https://{{ import_path }}
+    git_tag: v{{version}}
 
 build:
   number: 1000
+  script:
+    - pushd {{ pkg_src }}
+    - go install -v .
 
 requirements:
   build:
-    - {{ compiler('go') }}  # [not win]
-    - git  # [not win]
-    - make  # [not win]
+    - {{ compiler('go') }}
 
 test:
   commands:
