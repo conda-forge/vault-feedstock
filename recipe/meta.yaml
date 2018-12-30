@@ -2,26 +2,23 @@
 {% set version = "1.0.1" %}
 
 {% set name = import_path.split('/')[-1] %}
-{% set pkg_src = import_path.replace("/" , "\\") if win else import_path %}
+{% set pkg_src = os.path.join('src',
+                               import_path.replace("/","\\") if win
+                               else import_path)%}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  - folder: src/{{ import_path }}
+  - folder: {{ pkg_src }}
     git_url: https://{{ import_path }}
     git_tag: v{{version}}
 
 build:
   number: 1000
   script:
-    - pushd src/{{ import_path }}
-    - go get -d -v .
-
-    - export GOBIN=${PREFIX}/bin  # [unix]
-    - set GOBIN=${LIBRARY_BIN}  # [win]
-
+    - pushd {{ pkg_src }}
     - go install -v .
 
 requirements:
