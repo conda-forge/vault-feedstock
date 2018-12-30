@@ -2,9 +2,7 @@
 {% set version = "1.0.1" %}
 
 {% set name = import_path.split('/')[-1] %}
-{% set pkg_src = os.path.join('src',
-                               import_path.replace("/","\\") if win
-                               else import_path)%}
+{% set pkg_src = 'src' + os.sep+ import_path.replace("/",os.sep) %}
 
 package:
   name: {{ name|lower }}
