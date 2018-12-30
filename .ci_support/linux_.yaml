@@ -7,7 +7,7 @@ channel_targets:
 docker_image:
 - condaforge/linux-anvil-comp7
 go_compiler:
-- go_nocgo
+- go-nocgo
 zip_keys:
 - - channel_sources
   - channel_targets
