@@ -14,14 +14,19 @@ source:
     git_tag: v{{version}}
 
 build:
-  number: 1000
+  number: 1001
   script:
     - pushd {{ pkg_src }}
-    - go install -v .
+    - make static-dist
+    - go install -v -tags="ui" .
 
 requirements:
   build:
     - {{ compiler('go') }}
+    - go-bindata-assetfs
+    - go-gox
+    - make
+    - yarn
 
 test:
   commands:
