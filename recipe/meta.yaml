@@ -1,12 +1,12 @@
 {% set import_path = "github.com/hashicorp/vault" %}
-{% set version = "1.0.1" %}
+{% set version = "1.1.3" %}
 
 {% set name = import_path.split('/')[-1] %}
 {% set pkg_src = 'src' + os.sep+ import_path.replace("/",os.sep) %}
 
 package:
   name: {{ name|lower }}
-  version: {{ version }}
+  version: v{{ version }}
 
 source:
   - folder: {{ pkg_src }}
@@ -14,7 +14,7 @@ source:
     git_tag: v{{version}}
 
 build:
-  number: 1000
+  number: 0
   script:
     - pushd {{ pkg_src }}
     - go install -v .
@@ -42,3 +42,4 @@ extra:
   recipe-maintainers:
     - johanneskoester
     - sodre
+    - adbeda
