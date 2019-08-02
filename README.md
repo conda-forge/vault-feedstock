@@ -161,6 +161,7 @@ In order to produce a uniquely identifiable distribution:
 Feedstock Maintainers
 =====================
 
+* [@adbeda](https://github.com/adbeda/)
 * [@johanneskoester](https://github.com/johanneskoester/)
 * [@sodre](https://github.com/sodre/)
 
