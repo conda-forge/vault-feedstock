@@ -6,7 +6,7 @@
 
 package:
   name: {{ name|lower }}
-  version: v{{ version }}
+  version: {{ version }}
 
 source:
   - folder: {{ pkg_src }}
@@ -14,7 +14,7 @@ source:
     git_tag: v{{version}}
 
 build:
-  number: 0
+  number: 1
   script:
     - pushd {{ pkg_src }}
     - go install -v .
