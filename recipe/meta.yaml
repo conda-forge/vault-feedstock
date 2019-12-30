@@ -1,8 +1,8 @@
-{% set import_path = "github.com/hashicorp/vault" %}
-{% set version = "1.1.3" %}
+{% set goname = "github.com/hashicorp/vault" %}
+{% set version = "1.3.1" %}
 
-{% set name = import_path.split('/')[-1] %}
-{% set pkg_src = 'src' + os.sep+ import_path.replace("/",os.sep) %}
+{% set name = goname.split('/')[-1] %}
+{% set pkg_src = 'src' + os.sep + goname.replace("/",os.sep) %}
 
 package:
   name: {{ name|lower }}
@@ -10,11 +10,11 @@ package:
 
 source:
   - folder: {{ pkg_src }}
-    git_url: https://{{ import_path }}
-    git_tag: v{{version}}
+    url: https://{{ goname }}/archive/v{{ version }}.tar.gz
+    sha256: 2fcb4563482be3f4076cc8f9c5be3fe4d86b4e0f9d5ec7197da86d349c09df2e
 
 build:
-  number: 1
+  number: 0
   script:
     - pushd {{ pkg_src }}
     - go install -v .
@@ -37,9 +37,11 @@ about:
     and more. Vault provides a unified interface to any secret, while providing
     tight access control and recording a detailed audit log.
   doc_url: https://www.vaultproject.io/docs/index.html
+  dev_url: https://github.com/hashicorp/vault.git
 
 extra:
   recipe-maintainers:
     - johanneskoester
     - sodre
     - adbeda
+    - mariusvniekerk
