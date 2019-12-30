@@ -17,11 +17,16 @@ build:
   number: 1
   script:
     - pushd {{ pkg_src }}
-    - go install -v .
+    - make static-dist
+    - go install -v -tags="ui" .
 
 requirements:
   build:
     - {{ compiler('go') }}
+    - go-bindata-assetfs
+    - go-gox
+    - make
+    - yarn
 
 test:
   commands:
