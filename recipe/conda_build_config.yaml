@@ -1,2 +1,4 @@
 go_compiler:
   - go-nocgo
+go_compiler_version:
+  - 1.12
