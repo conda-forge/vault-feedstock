@@ -14,7 +14,7 @@ source:
     sha256: 675961d3c0c933ec260995c1aad024b20ac4ab0816c76b4cb07385a8c25b1d83
 
 build:
-  number: 0
+  number: 1
   # windows builds disabled since we don't have a go compiler for 1.12
   skip: true  # [win]
   script:
@@ -47,3 +47,5 @@ extra:
     - sodre
     - adbeda
     - mariusvniekerk
+    - oblute
+    - rluria14
