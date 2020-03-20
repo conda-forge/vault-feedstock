@@ -161,5 +161,7 @@ Feedstock Maintainers
 * [@adbeda](https://github.com/adbeda/)
 * [@johanneskoester](https://github.com/johanneskoester/)
 * [@mariusvniekerk](https://github.com/mariusvniekerk/)
+* [@oblute](https://github.com/oblute/)
+* [@rluria14](https://github.com/rluria14/)
 * [@sodre](https://github.com/sodre/)
 
