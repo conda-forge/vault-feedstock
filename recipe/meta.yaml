@@ -1,5 +1,5 @@
 {% set goname = "github.com/hashicorp/vault" %}
-{% set version = "1.4.1" %}
+{% set version = "1.4.3" %}
 
 {% set name = goname.split('/')[-1] %}
 {% set pkg_src = 'src' + os.sep + goname.replace("/",os.sep) %}
@@ -11,7 +11,7 @@ package:
 source:
   - folder: {{ pkg_src }}
     url: https://{{ goname }}/archive/v{{ version }}.tar.gz
-    sha256: c80d74fc01981e1078bbea62ed6bbd0043fd90003c5768014529c541bab2ea0a
+    sha256: 5210e6e0525fbbffbe2749e2dfc19782214e5223837d51005d68450765b698bf
 
 build:
   number: 0
