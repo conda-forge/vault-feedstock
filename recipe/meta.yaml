@@ -24,7 +24,7 @@ test:
 
 about:
   home: https://www.vaultproject.io
-  license: MPL 2.0
+  license: MPL-2.0
   summary: A tool for managing secrets.
   description: |
     Vault is a tool for securely accessing secrets. A secret is anything that you
