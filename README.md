@@ -3,7 +3,7 @@ About vault
 
 Home: https://www.vaultproject.io
 
-Package license: MPL 2.0
+Package license: MPL-2.0
 
 Feedstock license: BSD-3-Clause
 
