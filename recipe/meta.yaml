@@ -1,5 +1,5 @@
 {% set name = "vault" %}
-{% set version = "1.5.4" %}
+{% set version = "1.5.5" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   - url: https://github.com/hashicorp/{{ name }}/archive/v{{ version }}.tar.gz
-    sha256: 99e3145a9b6f5ee6429b997f3e1f35f648d07c617ff6aef7041f91fcf34e1582
+    sha256: 901bfe3062bdcde833f44240244056d75e7cd4edd30369096695b5596e4e6268
 
 build:
   number: 0
