@@ -5,9 +5,13 @@ Home: https://www.vaultproject.io
 
 Package license: MPL-2.0
 
-Feedstock license: BSD-3-Clause
+Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/vault-feedstock/blob/master/LICENSE.txt)
 
 Summary: A tool for managing secrets.
+
+Development: https://github.com/hashicorp/vault.git
+
+Documentation: https://www.vaultproject.io/docs/index.html
 
 Vault is a tool for securely accessing secrets. A secret is anything that you
 want to tightly control access to, such as API keys, passwords, certificates,
