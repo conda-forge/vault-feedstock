@@ -10,7 +10,7 @@ source:
     sha256: f3ae3bc088cb4bf859a8d5a94f83bba97c661479a628137c5d7fbd6b9957ec72
 
 build:
-  number: 0
+  number: 1
   script:
     - go install -v .
 
@@ -36,6 +36,7 @@ about:
 
 extra:
   recipe-maintainers:
+    - mxr-conda
     - johanneskoester
     - sodre
     - adbeda
