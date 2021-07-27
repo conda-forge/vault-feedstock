@@ -79,6 +79,7 @@ Installing `vault` from the `conda-forge` channel can be achieved by adding `con
 
 ```
 conda config --add channels conda-forge
+conda config --set channel_priority strict
 ```
 
 Once the `conda-forge` channel has been enabled, `vault` can be installed with:
@@ -157,10 +158,11 @@ In order to produce a uniquely identifiable distribution:
 Feedstock Maintainers
 =====================
 
+* [@JennaLipscomb](https://github.com/JennaLipscomb/)
 * [@adbeda](https://github.com/adbeda/)
 * [@johanneskoester](https://github.com/johanneskoester/)
 * [@mariusvniekerk](https://github.com/mariusvniekerk/)
+* [@mxr-conda](https://github.com/mxr-conda/)
 * [@oblute](https://github.com/oblute/)
-* [@rluria14](https://github.com/rluria14/)
 * [@sodre](https://github.com/sodre/)
 
