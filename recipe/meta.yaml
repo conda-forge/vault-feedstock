@@ -1,5 +1,5 @@
 {% set name = "vault" %}
-{% set version = "1.8.2" %}
+{% set version = "1.18.1" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   - url: https://github.com/hashicorp/{{ name }}/archive/v{{ version }}.tar.gz
-    sha256: ead7e85a64d31a8e69ca9932f1c53cdc46ed813d9532a8a7a7f0d187ea4f01f3
+    sha256: c2d7226a407920918bc89bec69e013e796df7d8429b4b6ec48ebfff77ef5ef72
 
 build:
   number: 0
@@ -43,3 +43,4 @@ extra:
     - mariusvniekerk
     - oblute
     - JennaLipscomb
+    - seowalex
