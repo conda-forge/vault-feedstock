@@ -208,7 +208,6 @@ Feedstock Maintainers
 =====================
 
 * [@JennaLipscomb](https://github.com/JennaLipscomb/)
-* [@adbeda](https://github.com/adbeda/)
 * [@danielnachun](https://github.com/danielnachun/)
 * [@johanneskoester](https://github.com/johanneskoester/)
 * [@mariusvniekerk](https://github.com/mariusvniekerk/)
