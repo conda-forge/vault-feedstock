@@ -1,30 +1,31 @@
-{% set name = "vault" %}
-{% set version = "1.8.2" %}
+{% set version = "1.19.0" %}
 
 package:
-  name: {{ name|lower }}
+  name: vault
   version: {{ version }}
 
 source:
-  - url: https://github.com/hashicorp/{{ name }}/archive/v{{ version }}.tar.gz
-    sha256: ead7e85a64d31a8e69ca9932f1c53cdc46ed813d9532a8a7a7f0d187ea4f01f3
+  - url: https://github.com/hashicorp/vault/archive/v{{ version }}.tar.gz
+    sha256: dee4086c3460d13bdf1c3b1d62695735b8b3d0c9cae7efcdea1800063970b77e
 
 build:
   number: 0
-  script:
-    - go install -v .
 
 requirements:
   build:
-    - {{ compiler('go') }}
+    - {{ compiler('go-nocgo') }}
+    - go-licenses
 
 test:
   commands:
-    - vault -v
+    - vault --help
 
 about:
   home: https://www.vaultproject.io
   license: MPL-2.0
+  license_file:
+    - LICENSE
+    - license-files/
   summary: A tool for managing secrets.
   description: |
     Vault is a tool for securely accessing secrets. A secret is anything that you
@@ -36,10 +37,10 @@ about:
 
 extra:
   recipe-maintainers:
+    - danielnachun
     - mxr-conda
     - johanneskoester
     - sodre
-    - adbeda
     - mariusvniekerk
     - oblute
     - JennaLipscomb
