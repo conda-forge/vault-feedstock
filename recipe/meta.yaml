@@ -1,4 +1,4 @@
-{% set version = "1.19.0" %}
+{% set version = "1.20.4" %}
 
 package:
   name: vault
@@ -6,7 +6,7 @@ package:
 
 source:
   - url: https://github.com/hashicorp/vault/archive/v{{ version }}.tar.gz
-    sha256: dee4086c3460d13bdf1c3b1d62695735b8b3d0c9cae7efcdea1800063970b77e
+    sha256: ae2215a325145c824c0f2bfdedcdd7cef44402b0eb3107a30133b82bb42d0403
 
 build:
   number: 0
