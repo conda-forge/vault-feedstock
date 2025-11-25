@@ -1,27 +1,29 @@
-{% set version = "1.19.0" %}
+schema_version: 1
+
+context:
+  version: 1.21.1
 
 package:
   name: vault
-  version: {{ version }}
+  version: ${{ version }}
 
 source:
-  - url: https://github.com/hashicorp/vault/archive/v{{ version }}.tar.gz
-    sha256: dee4086c3460d13bdf1c3b1d62695735b8b3d0c9cae7efcdea1800063970b77e
+  - url: https://github.com/hashicorp/vault/archive/v${{ version }}.tar.gz
+    sha256: d9f15d75fa4beee3a2faf26dfec860122c94b87139f65a5ed826a9934f0b2a42
 
 build:
   number: 0
 
 requirements:
   build:
-    - {{ compiler('go-nocgo') }}
+    - ${{ compiler('go-nocgo') }}
     - go-licenses
 
-test:
-  commands:
-    - vault --help
+tests:
+  - script:
+      - vault --help
 
 about:
-  home: https://www.vaultproject.io
   license: MPL-2.0
   license_file:
     - LICENSE
@@ -32,8 +34,9 @@ about:
     want to tightly control access to, such as API keys, passwords, certificates,
     and more. Vault provides a unified interface to any secret, while providing
     tight access control and recording a detailed audit log.
-  doc_url: https://www.vaultproject.io/docs/index.html
-  dev_url: https://github.com/hashicorp/vault.git
+  homepage: https://www.vaultproject.io
+  repository: https://github.com/hashicorp/vault.git
+  documentation: https://www.vaultproject.io/docs/index.html
 
 extra:
   recipe-maintainers:
