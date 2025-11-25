@@ -3,7 +3,7 @@ About vault-feedstock
 
 Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/vault-feedstock/blob/main/LICENSE.txt)
 
-Home: https://www.vaultproject.io
+Home: https://www.vaultproject.io/
 
 Package license: MPL-2.0
 
@@ -17,7 +17,6 @@ Vault is a tool for securely accessing secrets. A secret is anything that you
 want to tightly control access to, such as API keys, passwords, certificates,
 and more. Vault provides a unified interface to any secret, while providing
 tight access control and recording a detailed audit log.
-
 
 Current build status
 ====================
