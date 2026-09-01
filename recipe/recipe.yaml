@@ -1,7 +1,7 @@
 schema_version: 1
 
 context:
-  version: "2.0.4"
+  version: "2.1.0"
 
 package:
   name: vault
@@ -9,7 +9,7 @@ package:
 
 source:
   - url: https://github.com/hashicorp/vault/archive/v${{ version }}.tar.gz
-    sha256: 4307ad848455bb7db55cf604b9e3fb42267d86dc49aa6938fd8a60592d48579a
+    sha256: c321ddcb768def1ce05ae19a3967f30ca1c6018aded8d55278a389b438449305
 
 build:
   number: 0
